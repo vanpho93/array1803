@@ -7,13 +7,15 @@ const people = [
     { name: 'Tuan', age: 14, height: 115 },
 ];
 
-Array.prototype.myEvery = function(fn) {
-    for (let index = 0; index < this.length; index++) {
-        const element = this[index];
-        if(!fn(element)) return false;
-    }
-    return true;
-}
+people.forEach((x, index, arrP) => console.log(index + 1 + ': ' + x.name + ' ' + arrP.length));
 
-console.log(arr.myEvery(x => x < 7));
+// Array.prototype.myEvery = function(fn) {
+//     for (let index = 0; index < this.length; index++) {
+//         const element = this[index];
+//         if(!fn(element)) return false;
+//     }
+//     return true;
+// }
+
+// console.log(arr.myEvery(x => x < 7));
 // console.log(arr.some(x => x > 7));
