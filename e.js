@@ -6,15 +6,14 @@ const people = [
     { name: 'Tun', age: 12, height: 110 },
     { name: 'Tuan', age: 14, height: 115 },
 ];
-// const arrChan = arr.filter(a => a % 2 === 1);
-// console.log(people.filter(person => person.height > 100))
 
-Array.prototype.myFilter = function(fn) {
-    const output = [];
+Array.prototype.myFind = function(fn) {
     for (let index = 0; index < this.length; index++) {
         const element = this[index];
-        if (fn(element)) output.push(element);
+        if(fn(element)) return element;
     }
-    return output;
 }
-console.log(arr.myFilter(a => a % 2 === 1));
+
+// console.log(people.find(person => person.age + person.height === 105));
+// console.log(people.myFind(person => true));
+// console.log(people.myFind(person => false));

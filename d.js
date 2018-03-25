@@ -6,15 +6,15 @@ const people = [
     { name: 'Tun', age: 12, height: 110 },
     { name: 'Tuan', age: 14, height: 115 },
 ];
-// const arrChan = arr.filter(a => a % 2 === 1);
-// console.log(people.filter(person => person.height > 100))
 
-Array.prototype.myFilter = function(fn) {
+Array.prototype.myMap = function(fn) {
     const output = [];
     for (let index = 0; index < this.length; index++) {
         const element = this[index];
-        if (fn(element)) output.push(element);
+        output.push(fn(element));
     }
     return output;
 }
-console.log(arr.myFilter(a => a % 2 === 1));
+
+// console.log(arr.myMap(x => x * x));
+console.log(people.myMap(person => person.name));
